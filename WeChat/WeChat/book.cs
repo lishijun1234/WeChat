@@ -11,12 +11,21 @@ namespace WeChat
 {
     using System;
     using System.Collections.Generic;
-    
+    //It is must using this DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class book
     {
         public int BookID { get; set; }
+        
+
+        [Required(ErrorMessage ="BookName can not null!")]
         public string BookName { get; set; }
+
+
+        [Required(ErrorMessage ="Author can not null!")]
         public string Author { get; set; }
+
         public string Publisher { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string Remark { get; set; }
